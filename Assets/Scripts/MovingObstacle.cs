@@ -17,8 +17,21 @@ public class MovingObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
-        position.y = transform.position.y + 0.1f;
-        transform.position = position;
+       // transform.position = Vector2.MoveTowards(transform.position, targetDestination.position, Speed * Time.deltaTime);
+       Vector2 direction = m_target.position - transform.position;
+       transform.Translate(direction * m_speed * Time.deltaTime);
+    }
+
+    void ChangeTarget()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("MovingObstackeWaypoint"))
+        {
+            ChangeTarget();
+        }
     }
 }
