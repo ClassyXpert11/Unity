@@ -104,7 +104,8 @@ public class TopDownCharacterController : MonoBehaviour
         {
             // just log that an attack has been registered for now
             // we will look at how to do this in future sessions.
-            Debug.Log("Attack!");
+            // Debug.Log("Attack!");
+            
             Fire();
         }
     }
