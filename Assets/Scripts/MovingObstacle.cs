@@ -5,6 +5,7 @@ public class MovingObstacle : MonoBehaviour
     [SerializeField] private Transform m_startWaypoint;
     [SerializeField] private Transform m_endWaypoint;
     [SerializeField] private float m_speed = 5;
+    Vector2 direction;
 
     private Transform m_target;
 
@@ -12,23 +13,29 @@ public class MovingObstacle : MonoBehaviour
     void Start()
     {
         m_target = m_startWaypoint;
+        direction = m_target.position - transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-       Vector2 direction = m_target.position - transform.position;
        transform.Translate(direction * m_speed * Time.deltaTime);
     }
 
     void ChangeTarget()
     {
+        if (m_target == m_startWaypoint)
+            m_target = m_endWaypoint;
+        else
+            m_target = m_startWaypoint;
 
+        direction = m_target.position - transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("MovingObstackeWaypoint"))
+        Debug.Log(collision.tag);
+        if (collision.tag == "MovingObstacleWaypoint")
         {
             ChangeTarget();
         }
