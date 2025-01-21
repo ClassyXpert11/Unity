@@ -24153,6 +24153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerSpeed: 400
   m_playerMaxSpeed: 1000
+  m_projectilePrefab: {fileID: 0}
+  m_firePoint: {fileID: 0}
+  m_projectileSpeed: 0
 --- !u!1 &1803052487
 GameObject:
   m_ObjectHideFlags: 0
@@ -24287,7 +24290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353488475833622826, guid: f4d5c7822727fcd4eb339b6175bd0cc8, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5352819155683971338, guid: f4d5c7822727fcd4eb339b6175bd0cc8, type: 3}
       propertyPath: m_Name
