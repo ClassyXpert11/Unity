@@ -35,6 +35,11 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] Transform m_firePoint;
     [SerializeField] float m_projectileSpeed;
 
+    void Fire ()
+    {
+        GameObject projectileToSpawn = Instantiate(m_projectilePrefab, m_firePoint.position, Quaternion.identity);
+    }
+
     /// <summary>
     /// When the script first initialises this gets called.
     /// Use this for grabbing components and setting up input bindings.
@@ -98,6 +103,7 @@ public class TopDownCharacterController : MonoBehaviour
             // just log that an attack has been registered for now
             // we will look at how to do this in future sessions.
             Debug.Log("Attack!");
+            Fire();
         }
     }
 }
