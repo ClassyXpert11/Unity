@@ -30,6 +30,11 @@ public class TopDownCharacterController : MonoBehaviour
 
     #endregion
 
+    [Header("Projectile parameters")]
+    [SerializeField] GameObject m_projectilePrefab;
+    [SerializeField] Transform m_firePoint;
+    [SerializeField] float m_projectileSpeed;
+
     /// <summary>
     /// When the script first initialises this gets called.
     /// Use this for grabbing components and setting up input bindings.
