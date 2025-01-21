@@ -34,7 +34,6 @@ public class MovingObstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
         if (collision.tag == "MovingObstacleWaypoint")
         {
             ChangeTarget();
