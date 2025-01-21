@@ -17,7 +17,6 @@ public class MovingObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // transform.position = Vector2.MoveTowards(transform.position, targetDestination.position, Speed * Time.deltaTime);
        Vector2 direction = m_target.position - transform.position;
        transform.Translate(direction * m_speed * Time.deltaTime);
     }
