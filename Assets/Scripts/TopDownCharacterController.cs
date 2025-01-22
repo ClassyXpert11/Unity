@@ -38,8 +38,15 @@ public class TopDownCharacterController : MonoBehaviour
     private float m_fireTimeout = 0;
     private Vector2 m_lastDirection;
 
-    void Fire ()
+    private void Fire ()
     {
+        Vector2 fireDiretion = m_lastDirection;
+
+        if (fireDiretion == Vector2.zero)
+        {
+            fireDiretion = Vector2.down;
+        }
+
         GameObject projectileToSpawn = Instantiate(m_projectilePrefab, m_firePoint.position, Quaternion.identity);
 
         if (projectileToSpawn.GetComponent<Rigidbody2D>() != null)
@@ -104,6 +111,9 @@ public class TopDownCharacterController : MonoBehaviour
         {
             m_animator.SetFloat("Horizontal", m_playerDirection.x);
             m_animator.SetFloat("Vertical", m_playerDirection.y);
+
+            // Also set last facing direction for shooting later.
+            m_lastDirection = m_playerDirection;
         }
 
         // check if an attack has been triggered.
