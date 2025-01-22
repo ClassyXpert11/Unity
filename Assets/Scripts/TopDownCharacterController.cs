@@ -34,6 +34,9 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] GameObject m_projectilePrefab;
     [SerializeField] Transform m_firePoint;
     [SerializeField] float m_projectileSpeed;
+    [SerializeField] float m_fireRate;
+    private float m_fireTimeout = 0;
+    private Vector2 m_lastDirection;
 
     void Fire ()
     {
@@ -104,12 +107,13 @@ public class TopDownCharacterController : MonoBehaviour
         }
 
         // check if an attack has been triggered.
-        if (m_attackAction.IsPressed())
+        if (m_attackAction.IsPressed() && Time.time > m_fireTimeout)
         {
             // just log that an attack has been registered for now
             // we will look at how to do this in future sessions.
             // Debug.Log("Attack!");
-            
+
+            m_fireTimeout = Time.time + m_fireRate;
             Fire();
         }
     }
