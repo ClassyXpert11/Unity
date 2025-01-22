@@ -39,7 +39,11 @@ public class TopDownCharacterController : MonoBehaviour
     {
         GameObject projectileToSpawn = Instantiate(m_projectilePrefab, m_firePoint.position, Quaternion.identity);
 
-        projectileToSpawn.GetComponent<Rigidbody2D>().AddForce(Vector2.up * m_projectileSpeed, ForceMode2D.Impulse);
+        if (projectileToSpawn.GetComponent<Rigidbody2D>() != null)
+        {
+            projectileToSpawn.GetComponent<Rigidbody2D>().AddForce(m_playerDirection.normalized * m_projectileSpeed, ForceMode2D.Impulse);
+        }
+
     }
 
     /// <summary>
