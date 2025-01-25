@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -6,17 +7,19 @@ public class ScoreUI : MonoBehaviour
     public ScoreSystem m_scoreSystem;
 
     // a reference to the UI label - this will be updated every frame.
-    public TMPro.TextMeshPro m_uiLabel;
+    public TMPro.TextMeshProUGUI m_uiLabel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         // set the text to "score: {score}"
-        m_uiLabel.text = "Score " + m_scoreSystem.m_score;
+        m_uiLabel.text = "Score: " + m_scoreSystem.m_score;
     }
 }
+
