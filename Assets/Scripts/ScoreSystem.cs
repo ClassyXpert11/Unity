@@ -1,11 +1,11 @@
 using UnityEngine;
-// using UnityEngine.Events;
+using UnityEngine.Events;
 
 public class ScoreSystem : MonoBehaviour
 {
     // the current score of the player
     public int m_score;
-    // public UnityEvent onClick;
+    public UnityEvent onClick;
 
     /// <summary>
     /// Method to add a given amount of score to the player.
@@ -17,25 +17,20 @@ public class ScoreSystem : MonoBehaviour
         m_score += scoreToAdd;
     }
 
-    
-
-
-    // onClick.AddListenter(increaseScore);
-
-    public void increaseScore()
-    {
-        Debug.Log("clicked it");
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        onClick.AddListener(handleOnClick);
     }
 
     // Update is called once per frame
     public void Update()
     {
-        m_score += 10;
+        onClick.Invoke();
+    }
+    public void handleOnClick()
+    {
+       // m_score += 5;
     }
 }
