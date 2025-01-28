@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class MenuManager : MonoBehaviour
 {
@@ -21,5 +23,10 @@ public class MenuManager : MonoBehaviour
             m_controlsPanel.SetActive(true);
         }
         m_controlsPanelOpen = !m_controlsPanelOpen;
+    }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene(1);
     }
 }
