@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,6 +39,7 @@ public class TopDownCharacterController : MonoBehaviour
     private float m_fireTimeout = 0;
     private Vector2 m_lastDirection;
     private InputAction m_rollAction;
+    private bool m_isRolling = false;
 
     private void Fire ()
     {
@@ -103,7 +105,8 @@ public class TopDownCharacterController : MonoBehaviour
     void Update()
     {
         // store any movement inputs into m_playerDirection - this will be used in FixedUpdate to move the player.
-        m_playerDirection = m_moveAction.ReadValue<Vector2>();
+        if (!m_isRolling)
+            m_playerDirection = m_moveAction.ReadValue<Vector2>();
         
         // ~~ handle animator ~~
         // Update the animator speed to ensure that we revert to idle if the player doesn't move.
@@ -118,6 +121,8 @@ public class TopDownCharacterController : MonoBehaviour
             if (m_rollAction.IsPressed())
             {
                 m_animator.SetTrigger("Rolling");
+                m_isRolling = true;
+                StartCoroutine(RollingHandle());
             }
 
             // Also set last facing direction for shooting later.
@@ -134,5 +139,11 @@ public class TopDownCharacterController : MonoBehaviour
             m_fireTimeout = Time.time + m_fireRate;
             Fire();
         }
+    }
+
+    private IEnumerator RollingHandle()
+    {
+        yield return new WaitForSeconds(0.4f);
+        m_isRolling = false;
     }
 }
