@@ -25,9 +25,9 @@ public class TopDownCharacterController : MonoBehaviour
 
     [Header("Movement parameters")]
     //The speed at which the player moves
-    [SerializeField] private float m_playerSpeed = 200f;
+    [SerializeField] private float m_playerSpeed;
     //The maximum speed the player can move
-    [SerializeField] private float m_playerMaxSpeed = 1000f;
+    [SerializeField] private float m_playerMaxSpeed;
 
     #endregion
 
@@ -123,6 +123,7 @@ public class TopDownCharacterController : MonoBehaviour
                 m_animator.SetTrigger("Rolling");
                 m_isRolling = true;
                 StartCoroutine(RollingHandle());
+                m_playerSpeed = m_playerSpeed * 1.8f;
             }
 
             // Also set last facing direction for shooting later.
@@ -143,7 +144,9 @@ public class TopDownCharacterController : MonoBehaviour
 
     private IEnumerator RollingHandle()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.1f);
         m_isRolling = false;
+        m_playerSpeed = m_playerSpeed / 1.8f;
+
     }
 }
