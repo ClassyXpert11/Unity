@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - MovingObstacleWaypoint
+  - Coin
+  - BronzeCoin
+  - SilverCoin
+  - GoldCoin
   layers:
   - Default
   - TransparentFX
