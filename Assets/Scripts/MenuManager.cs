@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour
     public void LoadLevel1()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 
     public void Quit() 
