@@ -360,14 +360,14 @@ RectTransform:
   m_GameObject: {fileID: 1031232057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.030116947, y: 0.049612593, z: 0.17295352}
+  m_LocalScale: {x: 0.05620726, y: 0.09259198, z: 0.32278314}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1396242090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.78, y: 5.814148}
+  m_AnchoredPosition: {x: -5.1398, y: 8.7859}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031232059
@@ -712,7 +712,7 @@ RectTransform:
   m_GameObject: {fileID: 1624283839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.060194746, y: 0.09916069, z: 0.34568217}
+  m_LocalScale: {x: 0.112341456, y: 0.1850636, z: 0.6451466}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1960094966}
@@ -720,7 +720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.8}
+  m_AnchoredPosition: {x: -1.8179, y: -3.5577}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624283841
@@ -1217,7 +1217,7 @@ RectTransform:
   m_GameObject: {fileID: 2060228014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.030116947, y: 0.049612593, z: 0.17295352}
+  m_LocalScale: {x: 0.05620726, y: 0.09259198, z: 0.32278314}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724449083}
@@ -1226,7 +1226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.788696, y: -47.21216}
+  m_AnchoredPosition: {x: 58.985, y: -46.862}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
